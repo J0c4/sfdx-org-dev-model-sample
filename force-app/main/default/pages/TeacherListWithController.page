@@ -1,0 +1,9 @@
+<apex:page controller="TeachersListWithController">
+    <apex:pageBlock title="Teachers List" id="teachers_list">
+        <!-- Teachers List -->
+        <apex:pageBlockTable value="{! Teachers }" var="t">
+            <apex:column value="{! t.Name }" />
+            <apex:column value="{! t.Age__c }" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
