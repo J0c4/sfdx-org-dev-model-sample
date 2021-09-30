@@ -1,14 +1,24 @@
 public class StudentListController {
-    public List<Student__c> studentList {get;set;}
-    
-    public StudentListController(){
-        this.studentList = new List<Student__c> ();
-        ReadStudents();
-        
-    }
-    
-    public void ReadStudents(){
-        this.studentList = [SELECT Name, Age__c FROM Student__c];
+
+    private String sortOrder = 'Name';
+
+    public StudentListController() {}
+
+    public List<Student__c> getStudents() {
+        List<Student__c> results = Database.query(
+            'SELECT Id, Name, Age__c ' +
+            'FROM Student__c ' +
+            'ORDER BY ' + sortOrder + ' ASC ' +
+            'LIMIT 10'
+        );
+        return results;
     }
 
+    public void sortByName() {
+        this.sortOrder = 'Name';
+    }
+
+    public void sortByAge() {
+        this.sortOrder = 'Age__c';
+    }
 }

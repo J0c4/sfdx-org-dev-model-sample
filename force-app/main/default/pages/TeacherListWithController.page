@@ -1,9 +1,21 @@
 <apex:page controller="TeachersListWithController">
-    <apex:pageBlock title="Teachers List" id="teachers_list">
-        <!-- Teachers List -->
-        <apex:pageBlockTable value="{! Teachers }" var="t">
-            <apex:column value="{! t.Name }" />
-            <apex:column value="{! t.Age__c }" />
-        </apex:pageBlockTable>
-    </apex:pageBlock>
+    <apex:form>
+        <apex:pageBlock title="Teachers List" id="teachers_list">
+            <!-- Teachers List -->
+            <apex:pageBlockTable value="{! Teachers }" var="t">
+                <apex:column value="{! t.Name }">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{! sortByName }" reRender="teachers_list">Name
+                        </apex:commandLink>
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{! t.Age__c }">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{! sortByAge }" reRender="teachers_list">Age
+                        </apex:commandLink>
+                    </apex:facet>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
 </apex:page>

@@ -1,5 +1,15 @@
-<apex:page controller="CoursesListController" lightningStylesheets="true" docType="html-5.0" title="Courses List">
-  <apex:dataTable value="{!coursesList}" var="course">
-    <apex:column headerValue="Course Name" value="{!course.Name}" />
-  </apex:dataTable>
+<apex:page controller="CoursesListController">
+    <apex:form>
+        <apex:pageBlock title="Courses List" id="courses_list">
+            <!-- Courses List -->
+            <apex:pageBlockTable value="{! Courses }" var="c">
+                <apex:column value="{! c.Name }">
+                    <apex:facet name="header">
+                        <apex:commandLink action="{! sortByName }" reRender="students_list">Name
+                        </apex:commandLink>
+                    </apex:facet>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
 </apex:page>
