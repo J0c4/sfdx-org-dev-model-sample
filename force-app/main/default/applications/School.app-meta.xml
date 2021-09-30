@@ -14,5 +14,4 @@
     <tabs>Student_List</tabs>
     <tabs>Courses_List</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>School_UtilityBar</utilityBar>
 </CustomApplication>
