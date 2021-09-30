@@ -1,0 +1,9 @@
+<apex:page controller="StudentListController">
+    <apex:pageBlock title="All Students">
+        <apex:pageBlockTable value="{!studentList}" var="stu">
+            <apex:column headerValue="Name" value="{!stu.name}"/>
+            <apex:column headerValue="Age" value="{!stu.Age__c}"/>
+            
+        </apex:pageBlockTable>  
+    </apex:pageBlock>
+</apex:page>
