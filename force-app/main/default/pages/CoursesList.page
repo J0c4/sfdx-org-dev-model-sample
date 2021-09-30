@@ -1,0 +1,5 @@
+<apex:page controller="CoursesListController" lightningStylesheets="true" docType="html-5.0" title="Courses List">
+  <apex:dataTable value="{!coursesList}" var="course">
+    <apex:column headerValue="Course Name" value="{!course.Name}" />
+  </apex:dataTable>
+</apex:page>
